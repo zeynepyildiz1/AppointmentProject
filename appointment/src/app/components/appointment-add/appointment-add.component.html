@@ -1,0 +1,31 @@
+<div class="content">
+    <div class="col-md-6 m-auto" >
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Randevu ekle</h5>
+            </div>
+            <div class="card-body">
+                <form class="w-500" [formGroup]="appointmentAddForm">
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Tarih</label>
+                        <input type="datetime-local" class="form-control" formControlName="date"
+                            id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Konum</label>
+                        <input type="text" class="form-control" formControlName="location" id="exampleInputEmail1">
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Görüşülecek Kişi</label>
+                        <input type="text" class="form-control" formControlName="withWhom" id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" *ngIf="!updatePage" (click)="add()" class="btn btn-primary w-100">Kaydet</button>
+                    <button type="submit" *ngIf="updatePage" (click)="update()"
+                        class="btn btn-primary w-100">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
